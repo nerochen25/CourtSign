@@ -10,7 +10,7 @@ const passport = require('passport');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.get("/", (req, res) => res.send("Hello World, Dante"));
+app.get("/", (req, res) => res.send("CourtSign Project"));
 app.use(passport.initialize());
 require('./config/passport');
 
