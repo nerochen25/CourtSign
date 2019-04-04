@@ -10,8 +10,8 @@ const passport = require('passport');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// app.get("/", (req, res) => res.send("Hello World, Dante"));
-app.user(passport.initialize());
+app.get("/", (req, res) => res.send("Hello World, Dante"));
+app.use(passport.initialize());
 require('./config/passport');
 
 app.use("/api/users", users);
