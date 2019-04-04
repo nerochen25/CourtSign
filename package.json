@@ -1,7 +1,7 @@
 {
-  "name": "court_system",
+  "name": "CourtSign",
   "version": "1.0.0",
-  "description": "a queue system for sport gym courts",
+  "description": "a queue system for signing up gym courts",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
