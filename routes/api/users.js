@@ -5,9 +5,6 @@ const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 
-
-router.get("/test", (req, res) => res.json({ msg: "This is the users router" }));
-
 router.post('/register', (req, res) => {
     // Check to make sure nobody has already registered with a duplicate email
     User.findOne({ email: req.body.email })
