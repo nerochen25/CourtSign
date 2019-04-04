@@ -6,6 +6,15 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 
+require('../../config/passport')(passport)
+
+router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+  res.json({
+    id: req.user.id,
+    username: req.user.username,
+    email: req.user.email
+  });
+})
 
 router.post('/register', (req, res) => {
     // Check to make sure nobody has already registered with a duplicate email
@@ -67,13 +76,5 @@ router.post('/login', (req, res) => {
         })
     })
 });
-
-router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-  res.json({
-    id: req.user.id,
-    username: req.user.username,
-    email: req.user.email
-  });
-})
 
 module.exports = router;
