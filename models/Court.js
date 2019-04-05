@@ -6,10 +6,14 @@ const CourtSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
+    description: {
+        type: String,
+        required: false
+    },
     //court types: challenge, training, regular
     type: {
         type: String,
-        required: true
+        required: false
     },
     // players: {
     //     type: Array,
